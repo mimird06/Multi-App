@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-genero',
@@ -6,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./genero.page.scss'],
 })
 export class GeneroPage implements OnInit {
+  name: string = '';
+  gender: string = '';
+  color: string = '';
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
+  predecir(){
+    console.log('Botón de predecir presionado');
+
+    const apiUrl = `https://api.genderize.io/?name=${this.name}`;
+
+    this.http.get(apiUrl).subscribe((response: any) => {
+      console.log('Respuesta de la API:', response);
+      this.gender = response.gender;
+      this.color = this.gender === 'male' ? 'blue' : 'pink';
+    });
+  }
   ngOnInit() {
   }
 
