@@ -13,7 +13,7 @@ export class AppComponent {
     { title: 'Edad', url: '/edad', icon: 'people' },
     { title: 'Universidad', url: '/universidad', icon: 'school' },
     { title: 'Clima', url: '/clima', icon: 'cloudy-night' },
-    { title: 'Wordpress', url: '/wordpress', icon: 'logo-wordpress-outline' },
+    { title: 'Wordpress', url: '/wordpress', icon: 'logo-wordpress' },
     { title: 'Acerca de', url: '/acerca-de', icon: 'help' },
   ];
 

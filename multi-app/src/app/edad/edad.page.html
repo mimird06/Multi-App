@@ -16,10 +16,16 @@
     <ion-list>
       <ion-item>
         <ion-label position="floating"> Introducir el nombre: </ion-label>
-        <ion-input></ion-input>
+        <ion-input [(ngModel)]="name"></ion-input>
       </ion-item>
     </ion-list>
 
-    <ion-button expand="block"> Adivinar</ion-button>
+    <ion-button (click)="agePredictor()" expand="block"> Adivinar</ion-button>
   </ion-card>
+  <div *ngIf="age">
+    <div>
+      {{ name }} tiene {{ age }}
+    </div>
+    <img [src]="imageUrl" alt="Imagen de acuerdo a la edad" class="imagenes">
+  </div>
 </ion-content>

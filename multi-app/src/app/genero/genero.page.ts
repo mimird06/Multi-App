@@ -15,8 +15,6 @@ export class GeneroPage implements OnInit {
   constructor(private http: HttpClient) { }
 
   predecir(){
-    console.log('Botón de predecir presionado');
-
     const apiUrl = `https://api.genderize.io/?name=${this.name}`;
 
     this.http.get(apiUrl).subscribe((response: any) => {
