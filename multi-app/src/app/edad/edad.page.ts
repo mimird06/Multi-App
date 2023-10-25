@@ -10,6 +10,7 @@ export class EdadPage implements OnInit {
   age: string = '';
   name: string = '';
   imageUrl: string = '';
+  etapa: string = '';
 
   constructor(private http: HttpClient) { }
 
@@ -30,10 +31,13 @@ export class EdadPage implements OnInit {
     const age = parseInt(this.age, 10);
 
     if (age < 21){
+      this.etapa = 'joven';
       this.imageUrl = 'assets/jovenes.png';
     } else if (age >=22 && age <=49) {
+      this.etapa = 'adulto';
       this.imageUrl = 'assets/adulto.png';
     } else {
+      this.etapa = 'viejo';
       this.imageUrl = 'assets/viejo.png';
     }
 

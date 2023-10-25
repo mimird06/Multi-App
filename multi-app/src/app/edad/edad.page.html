@@ -23,8 +23,8 @@
     <ion-button (click)="agePredictor()" expand="block"> Adivinar</ion-button>
   </ion-card>
   <div *ngIf="age">
-    <div>
-      {{ name }} tiene {{ age }}
+    <div class="resultado">
+      {{ name }} es un/una {{ etapa }}  de {{ age }} años
     </div>
     <img [src]="imageUrl" alt="Imagen de acuerdo a la edad" class="imagenes">
   </div>
