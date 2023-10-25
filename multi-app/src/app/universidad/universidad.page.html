@@ -16,10 +16,17 @@
     <ion-list>
       <ion-item>
         <ion-label position="floating"> Introducir el pais: </ion-label>
-        <ion-input></ion-input>
+        <ion-input [(ngModel)]="country"></ion-input>
       </ion-item>
     </ion-list>
 
-    <ion-button expand="block"> Buscar</ion-button>
+    <ion-button (click)="uniInfo()" expand="block"> Buscar</ion-button>
+
+    <ion-list *ngFor="let university of universities">
+      <ion-item>
+        {{ university.name }} - Dominio: {{ university.domains.join(', ') }} - Página web: {{ university.web_pages.join(', ') }}
+      </ion-item>
+    </ion-list>
+
   </ion-card>
 </ion-content>
