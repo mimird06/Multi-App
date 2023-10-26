@@ -10,16 +10,19 @@
 <ion-content [fullscreen]="true">
   <ion-card>
     <ion-card-header>
-      <ion-card-subtitle> equis </ion-card-subtitle>
+      <ion-card-subtitle> The New York Times: Noticias del dia </ion-card-subtitle>
     </ion-card-header>
 
-    <ion-list>
-      <ion-item>
-        <ion-label position="floating"> x </ion-label>
-        <ion-input></ion-input>
-      </ion-item>
-    </ion-list>
+    <img src="assets/logonyt.png" style="width: 250px; margin:auto; display: flex;">
 
-    <ion-button expand="block"> Mostrar</ion-button>
+    <ion-button (click)="showNews()" expand="block"> Mostrar noticias de hoy </ion-button>
+
+    <ion-list *ngFor="let info of link" style="margin-top: 2rem;">
+      <div style="margin-bottom: 2rem;">
+        <b>{{info.title}}</b>
+        <br> {{info.abstract}}
+        <br> - More info:        {{info.url}}
+      </div>
+    </ion-list>
   </ion-card>
 </ion-content>
