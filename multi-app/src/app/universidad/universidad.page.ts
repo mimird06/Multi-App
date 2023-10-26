@@ -13,6 +13,7 @@ export class UniversidadPage implements OnInit {
 
   constructor(private http: HttpClient) { }
   uniInfo(){
+
     console.log('Boton presionado');
 
     const apiUrl = `http://universities.hipolabs.com/search?country=${this.country}`;

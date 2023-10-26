@@ -15,7 +15,12 @@
 
     <ion-list>
       <ion-item>
-        Clima en Santo Domingo, Distrito Nacional
+        <ion-label position="floating"> Introducir la latitud: </ion-label>
+        <ion-input [(ngModel)]="lat"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating"> Introducir la longitud: </ion-label>
+        <ion-input [(ngModel)]="long"></ion-input>
       </ion-item>
     </ion-list>
 
@@ -23,7 +28,19 @@
 
     <ion-list *ngFor="let data of degrees">
       <ion-item>
-        {{data.cityname}} - Temperatura: {{data.temp}}
+        Clima en {{data.city_name}}:
+      </ion-item>
+      <ion-item>
+        - Fecha: {{data.ob_time}}
+      </ion-item>
+      <ion-item>
+        - Temperatura: {{data.temp}} °C
+      </ion-item>
+      <ion-item>
+        - Pronostico: {{data.weather.description}}
+      </ion-item>
+      <ion-item>
+        - Precipitacion: {{data.precip}}
       </ion-item>
     </ion-list>
   </ion-card>
